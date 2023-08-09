@@ -26,7 +26,8 @@ export default class SimpleCarousel {
       types: config.types || 'image/*',
       captionPlaceholder: this.api.i18n.t('Caption'),
       buttonContent: config.buttonContent || 'Add Image',
-      uploader: config.uploader || undefined
+      uploader: config.uploader || undefined,
+      allowTunes: config.allowTunes || true,
     };
     /**
      * Module for file uploading
@@ -170,7 +171,11 @@ export default class SimpleCarousel {
 
   // eslint-disable-next-line require-jsdoc
   renderSettings() {
-    return this.tunes.render(this.tunesState);
+    if (this.config.allowTunes) {
+      return this.tunes.render(this.tunesState);
+    }
+
+    return make('div', this.CSS.wrapper);
   }
 
   // eslint-disable-next-line require-jsdoc
