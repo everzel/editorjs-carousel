@@ -175,7 +175,7 @@ export default class SimpleCarousel {
       return this.tunes.render(this.tunesState);
     }
 
-    return make('div', this.CSS.wrapper);
+    return '';
   }
 
   // eslint-disable-next-line require-jsdoc
