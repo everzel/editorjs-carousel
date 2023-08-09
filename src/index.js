@@ -27,7 +27,7 @@ export default class SimpleCarousel {
       captionPlaceholder: this.api.i18n.t('Caption'),
       buttonContent: config.buttonContent || 'Add Image',
       uploader: config.uploader || undefined,
-      allowTunes: config.allowTunes || true,
+      allowTunes: config.hasOwnProperty('allowTunes') ? config.allowTunes : true,
     };
     /**
      * Module for file uploading
